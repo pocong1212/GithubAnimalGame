@@ -297,6 +297,69 @@ position = Vector2( -80, 128 )
 [node name="Grass24" parent="Grasses" instance=ExtResource( 6 )]
 position = Vector2( -64, 128 )
 
+[node name="Grass41" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -96, 144 )
+
+[node name="Grass42" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -80, 144 )
+
+[node name="Grass43" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -64, 144 )
+
+[node name="Grass44" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -96, 160 )
+
+[node name="Grass45" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -80, 160 )
+
+[node name="Grass46" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -64, 160 )
+
+[node name="Grass47" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -96, 192 )
+
+[node name="Grass48" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -80, 192 )
+
+[node name="Grass49" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -64, 192 )
+
+[node name="Grass50" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -96, 208 )
+
+[node name="Grass51" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -80, 208 )
+
+[node name="Grass52" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -64, 208 )
+
+[node name="Grass53" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -96, 224 )
+
+[node name="Grass54" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -80, 224 )
+
+[node name="Grass55" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -64, 224 )
+
+[node name="Grass56" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -24, 208 )
+
+[node name="Grass57" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -8, 208 )
+
+[node name="Grass58" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( 8, 208 )
+
+[node name="Grass59" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -24, 224 )
+
+[node name="Grass60" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( -8, 224 )
+
+[node name="Grass61" parent="Grasses" instance=ExtResource( 6 )]
+position = Vector2( 8, 224 )
+
 [node name="Flower" type="Node2D" parent="."]
 
 [node name="Flower" parent="Flower" instance=ExtResource( 5 )]
