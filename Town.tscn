@@ -342,24 +342,6 @@ position = Vector2( -80, 224 )
 [node name="Grass55" parent="Grasses" instance=ExtResource( 6 )]
 position = Vector2( -64, 224 )
 
-[node name="Grass56" parent="Grasses" instance=ExtResource( 6 )]
-position = Vector2( -24, 208 )
-
-[node name="Grass57" parent="Grasses" instance=ExtResource( 6 )]
-position = Vector2( -8, 208 )
-
-[node name="Grass58" parent="Grasses" instance=ExtResource( 6 )]
-position = Vector2( 8, 208 )
-
-[node name="Grass59" parent="Grasses" instance=ExtResource( 6 )]
-position = Vector2( -24, 224 )
-
-[node name="Grass60" parent="Grasses" instance=ExtResource( 6 )]
-position = Vector2( -8, 224 )
-
-[node name="Grass61" parent="Grasses" instance=ExtResource( 6 )]
-position = Vector2( 8, 224 )
-
 [node name="Flower" type="Node2D" parent="."]
 
 [node name="Flower" parent="Flower" instance=ExtResource( 5 )]
