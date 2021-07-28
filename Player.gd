@@ -5,6 +5,7 @@ const TILE_SIZE = JOY_BUTTON_16
 
 onready var anim_tree = $AnimationTree
 onready var anim_state = anim_tree.get("parameters/playback")
+onready var ray = $RayCast2D
 
 enum PlayerState { IDLE, TURNING, WALKING }
 enum FacingDirection { LEFT, RIGHT, TOP, DOWN }
@@ -19,7 +20,6 @@ var percent_moved_to_next_tile = 0.0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,6 +58,7 @@ func process_player_input():
 	else:
 		anim_state.travel("Idle")
 
+
 func need_to_turn():
 	var new_facing_direction
 	if input_direction.x < 0:
@@ -75,17 +76,24 @@ func need_to_turn():
 	facing_direction = new_facing_direction
 	return false
 
+
 func finished_turning():
 	player_state = PlayerState.IDLE
 
 func move(delta):
-	percent_moved_to_next_tile += walk_speed * delta
-	if percent_moved_to_next_tile >= 1.0:
-		position = initial_position + (TILE_SIZE * input_direction)
-		percent_moved_to_next_tile = 0.0			
-		is_moving = false
+	var desired_step: Vector2 = input_direction * TILE_SIZE / 2
+	ray.cast_to = desired_step
+	ray.force_raycast_update()
+	if !ray.is_colliding():
+		percent_moved_to_next_tile += walk_speed * delta
+		if percent_moved_to_next_tile >= 1.0:
+			position = initial_position + (TILE_SIZE * input_direction)
+			percent_moved_to_next_tile = 0.0
+			is_moving = false
+		else:
+			position = initial_position + (TILE_SIZE * input_direction * percent_moved_to_next_tile)
 	else:
-		position = initial_position + (TILE_SIZE * input_direction * percent_moved_to_next_tile)
+		is_moving = false 
 	pass # Replace with function body.
 
 
