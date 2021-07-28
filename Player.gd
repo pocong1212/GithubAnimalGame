@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal player_moving_signal
+signal player_stopped_signal
+
 export var walk_speed = 4.0
 const TILE_SIZE = JOY_BUTTON_16
 
@@ -17,11 +20,8 @@ var initial_position = Vector2(0, 0)
 var input_direction = Vector2(0,0)
 var is_moving = false
 var percent_moved_to_next_tile = 0.0
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	anim_tree.active = true
 	initial_position = position
@@ -85,18 +85,15 @@ func move(delta):
 	ray.cast_to = desired_step
 	ray.force_raycast_update()
 	if !ray.is_colliding():
+		if percent_moved_to_next_tile == 0:
+			emit_signal("player_moving_signal")
 		percent_moved_to_next_tile += walk_speed * delta
 		if percent_moved_to_next_tile >= 1.0:
 			position = initial_position + (TILE_SIZE * input_direction)
 			percent_moved_to_next_tile = 0.0
 			is_moving = false
+			emit_signal("player_stopped_signal")
 		else:
 			position = initial_position + (TILE_SIZE * input_direction * percent_moved_to_next_tile)
 	else:
 		is_moving = false 
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
